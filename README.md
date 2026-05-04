@@ -110,7 +110,8 @@ Power BI dashboard visualizes:
 ##  Tools & Technologies
 - **Python:** Pandas, NumPy, Matplotlib, Seaborn  
 - **SQL:** MySQL (Aggregations, CASE, Views)  
-- **Visualization:** Power BI  
+- **Visualization:** Power BI
+- **Data Source** Kaggle
 
 
 ##  Project Structure
