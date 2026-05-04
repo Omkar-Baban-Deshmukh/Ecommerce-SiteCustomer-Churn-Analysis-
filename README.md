@@ -1,116 +1,140 @@
-# Customer Churn Analysis
+#  Customer Churn Analysis: Behavioral & Revenue Insights
 
 ## Project Overview
+This project analyzes customer churn to identify key behavioral drivers and quantify their financial impact. Using a dataset of **50,000 customers**, the analysis goes beyond churn percentages to evaluate **revenue at risk**.
 
-This project analyzes customer behavior to identify key factors driving churn. Using exploratory data analysis (EDA), the goal is to uncover patterns that help businesses improve customer retention.
+The project combines:
+- **Python** for data cleaning and preparation  
+- **SQL (MySQL)** for analytical insights  
+- **Power BI** for visualization  
 
 
 ## Objective
+- Identify high-risk behavioral patterns driving churn  
+- Quantify financial loss due to customer attrition  
+- Segment customers based on engagement and service interactions  
+- Provide actionable recommendations for retention  
 
-* Understand why customers churn
-* Identify high-risk customer segments
-* Provide actionable business recommendations
+
+## Technical Workflow
+
+### Data Cleaning (Python)
+- Handled missing values  
+- Removed unrealistic outliers (e.g., Age > 100)  
+- Standardized column names  
+- Created derived features:
+  - `login_freq_group`
+  - `service_call_group`
+  - `site_engagement`
 
 
-## Dataset
+### Database Management (MySQL)
+- Designed structured schema for analysis  
+- Optimized data types to avoid truncation issues  
+- Imported cleaned dataset into MySQL  
 
-* Records: 50,000 customers
-* Features: Demographics, engagement, purchases, service interactions
-* Target Variable: `Churned` (0 = Retained, 1 = Churned)
-
-## Data Cleaning
-
-* Handled missing values using median/mean based on distribution
-* Removed unrealistic values (e.g., invalid age ranges)
-* Converted categorical columns to appropriate data types
-* Created grouped features for better segmentation:
-
-  * `login_freq_Group`
-  * `purchase_group`
-  * `service_group`
-* Ensured consistent and analysis-ready dataset
+### Analysis (SQL)
+- Calculated KPIs:
+  - Churn Rate  
+  - Revenue Loss  
+  - Average Customer Value  
+- Performed segmentation analysis:
+  - Engagement-based churn  
+  - Service interaction impact  
+  - Membership group analysis  
 
 
 ## Key Insights
 
-### 1. Low Engagement Drives Churn
+### 1 Baseline Financial Impact
+- **Churn Rate:** 28.90% (~14,450 customers)  
+- **Revenue Loss:** ~$20.6M in Lifetime Value (LTV)  
+- **Average Loss per Customer:** ~$1,425  
 
-* Very low engagement → ~63% churn
-* Very high engagement → ~15% churn
-
-Engagement is a critical retention factor.
-
-
-### 2. Login Frequency as Early Signal
-
-* Low login users → ~45% churn
-* High login users → ~18% churn
-
-Reduced activity signals potential churn.
+ *Churn represents a significant financial risk requiring targeted retention strategies.*
 
 
-### 3. Purchase Behavior Impact
+### 2 Engagement–Revenue Paradox
+- **Highest Churn:**  
+  - *Very Low Engagement → 63.03% churn*  
 
-* Very low purchases → ~63% churn
-* Very high purchases → ~19% churn
+- **Highest Revenue Loss:**  
+  - *Medium Engagement → $8.54M loss (largest segment)*  
 
-High-value customers are more likely to stay.
-
-
-### 4. Customer Service Interaction
-
-* Low calls → ~12% churn
-* Very high calls → ~53% churn
-
-Frequent issues strongly correlate with churn.
+ *Churn rate alone is misleading—volume drives financial impact.*  
 
 
-### 5. Membership Duration (Non-driver)
+### 3️ Service Interactions as Churn Indicators
+- **Very High Service Calls → 53.81% churn**  
+- **High Call Segment → $14.2M revenue loss (highest risk group)**  
 
-* Churn rate remains ~29% across all groups
+ *Frequent support interactions signal dissatisfaction and high churn risk.*
 
-Tenure does not significantly impact churn.
+### 4️ Membership Tenure (Non-Driver)
+- Churn remains consistent (~28–29%) across all tenure groups  
+- **Early-stage users contribute highest revenue loss ($9.16M)** due to volume  
 
-
-## Conclusion
-
-Customer churn is primarily driven by behavioral and engagement factors, not by tenure.
-
-### Key Drivers:
-
-* Low engagement
-* Low login frequency
-* Low purchase activity
-* High customer service interactions
+  *Churn is behavior-driven, not tenure-driven.*
 
 
-## Business Recommendations
+## Actionable Recommendations
 
-* Improve user engagement (UX, personalization, notifications)
-* Encourage purchases (offers, recommendations, loyalty programs)
-* Reduce customer issues (faster support, proactive solutions)
-* Target high-risk users with re-engagement campaigns
-
-
-## Tools & Technologies
-
-* Python (Pandas, NumPy, Seaborn, Matplotlib)
-* Power BI (for dashboard visualization)
+### 1. Improve Engagement
+- Target users transitioning from **Medium → Low engagement**  
+- Use notifications, offers, and personalized content  
 
 
-## Future Scope
+###  2. Optimize Customer Support
+- Focus on **Medium & High service call segments**  
+- Reduce repeated complaints and resolution time  
 
-* Build predictive churn model (Machine Learning)
-* Deploy dashboard for real-time monitoring
-* Perform cohort analysis for deeper insights
+---
+
+###  3. Protect High-Volume Segments
+- Prioritize **Early membership customers**  
+- Implement onboarding and retention strategies  
 
 
-## Author
 
-Onkar Deshmukh
+##  Dashboard
+Power BI dashboard visualizes:
+- Churn Rate & Revenue KPIs  
+- Churn by Engagement  
+- Revenue Loss by Segment  
+- Service Call Impact  
+
+*(Add dashboard screenshot here)*
 
 
-## If you found this useful
 
-Give this repository a star and feel free to connect.
+##  Tools & Technologies
+- **Python:** Pandas, NumPy, Matplotlib, Seaborn  
+- **SQL:** MySQL (Aggregations, CASE, Views)  
+- **Visualization:** Power BI  
+
+
+##  Project Structure
+
+customer-churn-analysis/
+
+│── data/
+│ └── Customer_churn_final.csv
+
+│── notebooks/
+│ ├── Customer_Churn_Analysis.ipynb
+
+
+│── sql/
+│ └── sql script for churn analysis.sql
+
+│── powerbi/
+│ └── churn_dashboard.pbix
+
+│── images/
+│ └── dashboard.png
+
+│── README.md
+
+##  Author
+**Onkar Deshmukh**
 
