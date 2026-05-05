@@ -129,7 +129,7 @@ customer-churn-analysis/
 │ └── sql script for churn analysis.sql
 
 │── powerbi/
-│ └── churn_dashboard.pbix
+│ └── Customer_Churn_Analysis.pbix
 
 │── images/
 │ └── dashboard.png
